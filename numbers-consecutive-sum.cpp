@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// if a integer can be expressed as sum of consecutive numbers from 1
+
 int countConsecutive(int n){
   int count = 0;
   for (int i = 1; i*(i+1) <= 2*n; i++) {
