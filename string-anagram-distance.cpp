@@ -6,6 +6,7 @@ using namespace std;
 
 int countToAnagram(string str1, string str2){
   int arr[26] = {0};
+
   for (int i = 0; i < str1.length(); i++)
     ++arr[str1[i] - 'a'];
   for (int i = 0; i < str2.length(); i++)
