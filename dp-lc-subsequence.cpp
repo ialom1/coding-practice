@@ -24,6 +24,8 @@ void lcs(string X, string Y){
     }
   }
 
+  std::cout << "Length of LC Subsequence: " << dp[m][n] << '\n';
+
   int index = dp[m][n];
   char str[index+1];
   str[index--] = '\0';

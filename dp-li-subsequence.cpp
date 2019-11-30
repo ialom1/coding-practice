@@ -26,12 +26,13 @@ void lis(int arr[], int n){
     list[i].push_back(arr[i]);
     // printList(list[i]);
   }
-  std::vector<int> max = list[0];
+  std::vector<int> maxlist = list[0];
   for (int i=0; i<n; i++) {
-    if(list[i].size() > max.size())
-      max = list[i];
+    if(list[i].size() > maxlist.size())
+      maxlist = list[i];
   }
-  printList(max);
+  std::cout << "Length of LI Subsequence: " << maxlist.size() << '\n';
+  printList(maxlist);
 }
 
 int main() {

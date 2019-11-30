@@ -49,7 +49,7 @@ int main() {
   int first = findFirst(ara, len, x);
   int last = findLast(ara, len, x);
   int total = last - first + 1;
-  
+
   std::cout << "First occurence of " << x << ": " << first << '\n';
   std::cout << "Last occurence of " << x << ": " << last << '\n';
   std::cout << "Total occurences of " << x << ": " << total << '\n';
