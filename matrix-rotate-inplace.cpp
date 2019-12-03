@@ -5,6 +5,8 @@ using namespace std;
 
 #define M 4
 #define N 4
+#define endRow N-j-1 // w.r.t to i
+#define endCol N-i-1 // w.r.t to j
 
 void print(int arr[M][N]){
   for (int i = 0; i < M; i++){
@@ -22,10 +24,10 @@ void rotate90Clock(int arr[M][N]){
   for (int i = 0; i < M/2; i++) {
     for (int j = i; j < N-i-1; j++) {
       int temp = arr[i][j];
-      arr[i][j] = arr[N-1-j][i];         // left to top
-      arr[N-1-j][i] = arr[N-1-i][N-1-j]; // bottom to left
-      arr[N-1-i][N-1-j] = arr[j][N-1-i]; // right to bottom
-      arr[j][N-1-i] = temp;
+      arr[i][j] = arr[endRow][i];         // left to top
+      arr[endRow][i] = arr[endCol][endRow]; // bottom to left
+      arr[endCol][endRow] = arr[j][endRow]; // right to bottom
+      arr[j][endCol] = temp;
     }
   }
 }
@@ -34,10 +36,10 @@ void rotate90AntiClock(int arr[M][N]){
   for (int i = 0; i < M/2; i++) {
     for (int j = i; j < N-i-1; j++) {
       int temp = arr[i][j];
-      arr[i][j] = arr[j][N-1-i];         // right to top
-      arr[j][N-1-i] = arr[N-1-i][N-1-j]; // bottom to right
-      arr[N-1-i][N-1-j] = arr[N-1-j][i]; // left to bottom
-      arr[N-1-j][i] = temp;
+      arr[i][j] = arr[j][endCol];         // right to top
+      arr[j][endCol] = arr[endCol][endRow]; // bottom to right
+      arr[endCol][endRow] = arr[endRow][i]; // left to bottom
+      arr[endRow][i] = temp;
     }
   }
 }
@@ -52,8 +54,8 @@ int main() {
   std::cout << "Initial Matrix------" << '\n';
   print(arr);
 
-  rotate90Clock(arr);
-  // rotate90AntiClock(arr);
+  // rotate90Clock(arr);
+  rotate90AntiClock(arr);
 
   std::cout << "Rotated Matrix------" << '\n';
   print(arr);
