@@ -20,15 +20,6 @@ int dfs(int v, vector<int> adj[], vector<int> visited, vector<int> color){
   return 1;
 }
 
-// normal DFS
-void cdfs(int v, vector<int> adj[], vector<int> visited){
-  for(int u: adj[v]){
-    if(visited[u]) return;
-    visited[u] = 1;
-    cdfs(u, adj, visited);
-  }
-}
-
 int main() {
   int V = 10;
   vector<Edge> E = {
