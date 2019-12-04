@@ -14,26 +14,18 @@ void initialize(int count) {
 }
 
 void dfs(int s){
-  initialize(10);
-
   stack<int> S;
   S.push(s);
 
   while(!S.empty()){
     int u = S.top();
+    visited[u] = 1; 
     S.pop();
 
-    if(!visited[u]) {
-      visited[u] = 1;
-    }
-
-    for (int i = 0; i < adj[s].size(); i++) {
-      int v = adj[s][i];
-      if(!visited[v])
-        S.push(v);
+    for(auto v: adj[u]){
+      if(!visited[v]) S.push(v);
     }
   }
-
 }
 
 int main() {
@@ -47,10 +39,11 @@ int main() {
     adj[x].push_back(y);
     adj[y].push_back(x);
   }
-
+  initialize(10);
   for (int i = 0; i < V; i++) {
     if(!visited[i]){
       dfs(i);
+      std::cout << i << '\n';
       ++conComp;
     }
   }

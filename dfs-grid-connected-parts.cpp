@@ -8,7 +8,9 @@ using namespace std;
 #define COL 5
 
 int isSafe(int M[][COL], int row, int col, bool visited[][COL]) {
-  return (row >= 0) && (col >= 0) && (row < ROW) && (col < COL) && (M[row][col] && !visited[row][col]);
+  return (row >= 0) && (col >= 0) &&
+         (row < ROW) && (col < COL) &&
+         (M[row][col] && !visited[row][col]);
 }
 
 void dfs(int M[][COL], int row, int col, bool visited[][COL]) {
