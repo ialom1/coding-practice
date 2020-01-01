@@ -96,6 +96,7 @@ int main() {
         for(int k=1; k<=3; k++){
           if(i==k || j==k) continue;
           int dist = 0;
+
           for(int x=1; x<=n; x++){
             point[x] = 0;
           }
