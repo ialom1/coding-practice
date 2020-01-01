@@ -31,9 +31,9 @@ bool Graph :: isCyclicUtil(int v, int visited[], int recStack[]){
     for(int i=0; i<adj[v].k; i++){
       int n = adj[v].list[i];
       if(!visited[n] && isCyclicUtil(n, visited, recStack))
-      return true;
+        return true;
       else if(recStack[n])
-      return true;
+        return true;
     }
   }
   recStack[v] = 0;
@@ -53,9 +53,10 @@ int main() {
   g.addEdge(0, 1);
   g.addEdge(0, 2);
   g.addEdge(1, 2);
-  // g.addEdge(2, 0);
+  g.addEdge(2, 0);
   g.addEdge(2, 3);
-  // g.addEdge(3, 3);
+  g.addEdge(3, 3);
+  
   // for(int i=0; i<4; i++){
   //   std::cout << g.adj[i].list[0] << '\n';
   // }
