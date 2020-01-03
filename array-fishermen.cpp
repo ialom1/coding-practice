@@ -105,13 +105,13 @@ int main() {
           dist += left_cal(gate[k][1], gate[k][2]);
           if(ans > dist) ans = dist;
 
-          for(int x=1; x<=n; x++){
-            point[x] = 0;
-          }
-          dist += right_cal(gate[i][1], gate[i][2]);
-          dist += right_cal(gate[j][1], gate[j][2]);
-          dist += right_cal(gate[k][1], gate[k][2]);
-          if(ans > dist) ans = dist;
+          // for(int x=1; x<=n; x++){
+          //   point[x] = 0;
+          // }
+          // dist += right_cal(gate[i][1], gate[i][2]);
+          // dist += right_cal(gate[j][1], gate[j][2]);
+          // dist += right_cal(gate[k][1], gate[k][2]);
+          // if(ans > dist) ans = dist;
         }
       }
     }
