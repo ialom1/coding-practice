@@ -33,13 +33,12 @@ void lcs(string X, string Y){
 
   char arr[len+1];
   int index = len;
+  arr[index--] = '\0';
   while (dp[row][col] != 0) {
-    arr[--index] = X[row-1];
+    arr[index--] = X[row-1];
     row--; col--;
   }
-  for (int i = 0; i < len; i++) {
-    std::cout << arr[i];
-  }
+  std::cout << arr << '\n';
 }
 
 

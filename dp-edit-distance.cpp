@@ -53,8 +53,8 @@ int lcs(string X, string Y){
 
 
 int main() {
-  string X = "sunday";
-  string Y = "saturday";
+  string X = "tabriz";
+  string Y = "torino";
   cout << lcs(X, Y) << endl;
   return 0;
 }
