@@ -25,19 +25,19 @@ int main() {
   vector<Edge> E = {
     {1, 2}, {2, 3}, {2, 8}, {3, 4},
     {4, 6}, {5, 7}, {5, 9}, {8, 9},
-    {2, 4}
+    // {2, 4}
     // removing {2, 4} makes it bipartite
   };
 
-  vector<int> adj[V];
-  vector<int> visited(V);
-  vector<int> color(V);
+  vector<int> adj[V+1];
+  vector<int> visited(V+1);
+  vector<int> color(V+1);
 
   for (auto e: E) {
     adj[e.x].push_back(e.y);
     adj[e.y].push_back(e.x);
   }
-  visited[0] = 1, color[0] = 0;
+  visited[1] = 1, color[1] = 0;
   int res = dfs(1, adj, visited, color);
   std::cout << "Bicolorable: " << res << '\n';
 }
