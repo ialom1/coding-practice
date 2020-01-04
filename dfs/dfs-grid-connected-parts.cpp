@@ -17,8 +17,12 @@ void dfs(int M[][COL], int row, int col, bool visited[][COL]) {
   if(visited[row][col]) return;
   visited[row][col] = true;
 
-  int rowNumber[] = {-1,-1,-1, 0,0, 1,1,1};
-  int colNumber[] = {-1,0,1, -1,1, -1,0,1};
+  int rowNumber[] = {0, 0, 1, -1, 1, -1, 1, -1};
+  int colNumber[] = {-1, 1, 0, 0, -1, 1, 1, -1};
+  //
+  // int rowNumber[] = {-1,-1,-1, 0,0, 1,1,1};
+  // int colNumber[] = {-1,0,1, -1,1, -1,0,1};
+  
   for (int i = 0; i < 8; i++) {
     if(isSafe(M, row+rowNumber[i], col+colNumber[i], visited)){
       dfs(M, row+rowNumber[i], col+colNumber[i], visited);

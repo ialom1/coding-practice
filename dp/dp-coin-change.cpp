@@ -15,9 +15,9 @@ int countChangeWays(int arr[], int m, int n){
 }
 
 int main() {
-  int arr[] = {2, 3, 5, 6};
+  int arr[] = {9, 6, 5, 1};
   int m = sizeof(arr)/sizeof(arr[0]);
-  int n = 10;
+  int n = 11;
   std::cout << countChangeWays(arr, m, n) << '\n';
   return 0;
 }

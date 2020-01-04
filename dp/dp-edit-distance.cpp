@@ -31,24 +31,8 @@ int lcs(string X, string Y){
                          );
     }
   }
-  return dp[m][n];
 
-  // int index = dp[m][n];
-  // char str[index+1];
-  // str[index--] = '\0';
-  // int i = m, j = n;
-  // while (i>0 && j>0) {
-  //   if(X[i-1] == Y[j-1]){
-  //     str[index--] = X[i-1];
-  //     i--; j--;
-  //   }
-  //   else if(dp[i-1][j] > dp[i][j-1])
-  //     i--;
-  //   else
-  //     j--;
-  // }
-  //
-  // std::cout << str << '\n';
+  return dp[m][n];
 }
 
 
