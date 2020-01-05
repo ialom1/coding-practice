@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// if a integer can be expressed as sum of consecutive numbers from 1
+// Number of ways to represent a number as consecutive  sum
 
 int countConsecutive(int n){
   int count = 0;
