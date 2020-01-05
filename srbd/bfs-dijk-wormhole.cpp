@@ -1,7 +1,8 @@
 #include <iostream>
 
 using namespace std;
-
+// Problem:  shortest path from source to destination
+// (Dijkstra)
 struct Node {
   int x, dist;
   Node(){}

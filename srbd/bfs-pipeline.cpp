@@ -1,6 +1,8 @@
 #include <iostream>
 
 using namespace std;
+// Shotest path from from source to destination
+// BFS with conditions
 #define Max 1000
 #define row_size 3
 #define col_size 4

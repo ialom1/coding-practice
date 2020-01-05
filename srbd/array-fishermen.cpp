@@ -1,6 +1,7 @@
 #include <iostream>
 
 using namespace std;
+// Shortest distance from multiple sources
 
 int n, point[100];
 
