@@ -20,7 +20,7 @@ void print(int x) {
   std::cout << '\n';
 }
 void blast(int x) {
-  for(int i=x-1; i>=x-2 && i>=0; i--){
+  for(int i=x-1; i>=x-5 && i>=0; i--){
     for(int j=0; j<c; j++){
       if(g[i][j] == 2) g[i][j] = 0;
     }
@@ -35,7 +35,7 @@ int isBlocked(int x, int y){
 }
 
 int track(int x, int y, int coins){
-  std::cout << x << y << " -> ";
+  // std::cout << x << y << " -> ";
   int ret = 0;
   if(bomb) blast(x);
   if(x == 0) return coins;
@@ -49,10 +49,10 @@ int track(int x, int y, int coins){
       if(isSafe(mx, my)){
         vis[mx][my] = 1;
         int res = track(mx, my, coins+g[mx][my]);
-        vis[mx][my] = 0;
         if(res > ret) ret = res;
-        std::cout << res << " : ";
-        print(mx);
+        vis[mx][my] = 0;
+        // std::cout << res << " : ";
+        // print(mx);
       }
     }
   }
