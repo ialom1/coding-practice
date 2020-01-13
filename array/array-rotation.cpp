@@ -11,8 +11,12 @@ void print(int arr[], int n) {
   std::cout << '\n';
 }
 
-void rotate(int arr[], int n){
+void rotate(int arr[], int n){ // clockwise
   for (int i = 1; i < n; i++)
+    swap(arr[i], arr[i-1]);
+}
+void rotateAnti(int arr[], int n){ // clockwise
+  for (int i = n-1; i > 0; i--)
     swap(arr[i], arr[i-1]);
 }
 

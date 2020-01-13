@@ -11,10 +11,14 @@ int findMin(int ara[], int len, int x){
     if(ara[start] <= ara[end])
       return start;
 
-    else if((ara[mid] <= ara[start]) && (ara[mid] <= ara[end]))
+    int next = (mid+1) % len;
+    int prev = (mid+len-1)%len;
+
+    // pivot
+    if((ara[mid] <= ara[next]) && (ara[mid] <= ara[prev]))
       return mid;
 
-    else if(ara[mid] <= ara[start])
+    else if(ara[mid] <= ara[end])
       end = mid - 1;
     else
       start = mid + 1;
@@ -24,7 +28,7 @@ int findMin(int ara[], int len, int x){
 
 int main() {
   // Sorted array
-  int ara[] = {11, 12, 15, 18, 2, 5, 6, 8};
+  int ara[] = {4, 5, 1, 2, 3};
   int len = sizeof(ara)/sizeof(ara[0]);
 
   std::cout << "Rotated array : ";
