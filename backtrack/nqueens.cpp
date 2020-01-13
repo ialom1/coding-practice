@@ -35,7 +35,7 @@ int solve(int col){
   }
   int res = false;
   for(int i=0; i<N; i++){
-    if(isSafe(i, col)){
+    if(isSafe(i, col)){ // std::cout << i << '\n';
       board[i][col] = 1;
       res = solve(col+1) || res;
       board[i][col] = 0;

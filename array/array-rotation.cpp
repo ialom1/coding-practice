@@ -26,10 +26,10 @@ int main() {
   for (int i = 0; i < n; i++)
     std::cin >> arr[i];
 
-  for (int i = 0; i < n; i++){
-    int p = i + d;
-    if(p >= n) p%=(d+1);
-    std::cout << arr[p] << " ";
+  for (int i = 0; i < d; i++){
+    std::cout << "Rotation " << i << '\n';
+    rotate(arr, n);
+    print(arr, n);
   }
   std::cout << '\n';
 }
