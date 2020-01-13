@@ -50,7 +50,9 @@ int dijkstra(int grid[][3], int sx, int sy, int dx, int dy){
   for(int i=0; i<V; i++)
     for(int j=0; j<V; j++)
       dist[i][j] = MAX;
+
   Node st = Node(sx, sy, 0);
+  dist[sx][sy] = 0;
   _push(st);
 
   while(head < tail){
@@ -66,8 +68,8 @@ int dijkstra(int grid[][3], int sx, int sy, int dx, int dy){
       int my = u.y + cols[i];
       if(isSafe(mx, my) && grid[mx][my] != 0){
         int cos = dis + _cost(u.x, mx);
-        if(cos < dist[u.x][u.y]){
-          dist[u.x][u.y] = cos;
+        if(cos < dist[mx][my]){
+          dist[mx][my] = cos;
           _push(Node(mx, my, cos));
         }
         std::cout << mx << " " << my << " " << cos << '\n';
