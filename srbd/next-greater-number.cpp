@@ -2,10 +2,10 @@
 
 using namespace std;
 
-void swap(char *a, char *b){
-  char temp = *a;
-  *a = *b;
-  *b = temp;
+void swap(char &a, char &b){
+  char temp = a;
+  a = b;
+  b = temp;
 }
 
 void findNextGreater(char nums[], int len){
@@ -24,18 +24,18 @@ void findNextGreater(char nums[], int len){
       smallest = j;
   }
 
-  swap(&nums[smallest], &nums[i-1]);
+  swap(nums[smallest], nums[i-1]);
 
   for(int k=i; k<len-1; k++){
     for(int l=k+1; l<len-1; l++){
-      if(nums[k] > nums[l]) swap(&nums[k], &nums[l]);
+      if(nums[k] > nums[l]) swap(nums[k], nums[l]);
     }
   }
   std::cout << "Next Greater: " << nums << '\n';
 }
 
 int main() {
-  char digits[] = "12345";
+  char digits[] = "123795810";
   int len = sizeof(digits)/sizeof(digits[0]);
   findNextGreater(digits, len);
   return 0;
