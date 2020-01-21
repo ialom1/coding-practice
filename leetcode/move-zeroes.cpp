@@ -15,7 +15,7 @@ int main() {
   std::cout << "Initial array: " << '\n';
   _print(ara, len);
 
-  int z = 0, i, j=0, ans[len] = {0};
+  int z = 0, i=0, j=0, ans[len] = {0};
   for(i=0; i<len; i++){
     if(ara[i] == 0){
       ++z;

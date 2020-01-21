@@ -109,7 +109,6 @@ int main() {
   insertAtBegining(&head, 15);
   insertAtBegining(&head, 20);
 
-
   insertAt(&head, 0, 2);
   insertAt(&head, 1, 4);
   insertAt(&head, 0, 6);
