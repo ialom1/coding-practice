@@ -2,26 +2,17 @@
 
 using namespace std;
 
-void copyArray(int a[], int b[], int n){
-  for(int i=0; i<n; i++)
-    a[i] = b[i];
-  a[n] = '\0';
+void recur(int l, int h){
+  std::cout << l << " " << h << '\n';
+  if(l < h) {
+    int mid = (l+h)/2;
+    recur(l, mid);
+    recur(mid+1, h);
+    std::cout << "merge: " << l << h << " " << l+h <<  '\n';
+  }
 }
 
 int main() {
-  int a[] = {1,2,3,4,5};
-  int b[] = {6,7,8,9};
-  int m = sizeof(a)/sizeof(a[0]);
-  int n = sizeof(b)/sizeof(b[0]);
-
-  copyArray(a, b, n);
-
-  for(int i=0; i<sizeof(a)/sizeof(a[0]); i++)
-  std::cout << a[i] << ' ';
-  std::cout << '\n';
-  for(int i=0; i<sizeof(b)/sizeof(b[0]); i++)
-  std::cout << b[i] << ' ';
-  std::cout << '\n';
-
+  recur(1, 10);
   return 0;
 }
