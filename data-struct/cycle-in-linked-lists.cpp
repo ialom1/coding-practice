@@ -37,26 +37,29 @@ Node* newNode(int key) {
   temp->next = NULL;
   return temp;
 }
+
 void removeLoop(Node* loop_node, Node* head){
   Node *ptr1 = head;
   Node *ptr2;
   while (1) {
     ptr2 = loop_node;
+
     while (ptr2->next != ptr1 && ptr2->next != loop_node) {
       ptr2 = ptr2->next;
     }
+
     if(ptr2->next == ptr1) break;
     else ptr1 = ptr1->next;
   }
   ptr2->next = NULL;
 }
-
 int detectAndRemoveLoop(Node* head){
   Node *slow = head;
   Node *fast = head;
   while(slow && fast && fast->next){
     slow = slow->next;
     fast = fast->next->next;
+
     if(slow == fast){
       removeLoop(slow, head);
       return 1;
