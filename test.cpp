@@ -34,6 +34,10 @@ int getSum(int a, int b) {
 }
 
 int main() {
-  std::cout << getSum(2, -3) << '\n';
+  // std::cout << getSum(2, -3) << '\n';
+  int a = 13;
+  int *b = &a;
+  std::cout << a << '\n';
+  std::cout << b << '\n';
   return 0;
 }
