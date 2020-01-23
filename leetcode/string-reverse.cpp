@@ -16,7 +16,7 @@ void swap(char &a, char &b) {
 
 void _reverse(char str[], int len){
   for(int i=0; i<len/2; i++) {
-    swap(str[i], str[len-1-i]);
+    swap(str[i], str[len-i-1]);
   }
 }
 

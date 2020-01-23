@@ -27,16 +27,17 @@ void findNextGreater(char nums[], int len){
   swap(nums[smallest], nums[i-1]);
 
   for(int k=i; k<len-1; k++){
-    for(int l=k+1; l<len-1; l++){
-      if(nums[k] > nums[l]) swap(nums[k], nums[l]);
+    for(int l=k+1; l<len; l++){
+      if(nums[k] > nums[l])
+        swap(nums[k], nums[l]);
     }
   }
   std::cout << "Next Greater: " << nums << '\n';
 }
 
 int main() {
-  char digits[] = "123795810";
+  char digits[] = "123795811";
   int len = sizeof(digits)/sizeof(digits[0]);
-  findNextGreater(digits, len);
+  findNextGreater(digits, len-1);
   return 0;
 }
